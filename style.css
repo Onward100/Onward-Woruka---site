@@ -585,6 +585,7 @@ margin-top: 30px;
       position: relative;
       left: 90px;
       top: 100px;
+      display: flex;
     }
     .card-overlay{
       width: 95%;
