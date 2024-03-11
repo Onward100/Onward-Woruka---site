@@ -84,7 +84,7 @@ body{
 .nav-menu-overlay{
   background-color: var(--primary-color);
   position: fixed;
-  width: 100%;
+  width: 80%;
   height: 100vh;
   opacity: .98;
   z-index: 999000;
@@ -94,7 +94,7 @@ body{
 .nav-menu{
   background-color: var(--text-color);
   height: 100vh;
-  width: 70%;
+  width: 87%;
   padding: 20px;
 }
 .nav-menu .img-close{
@@ -180,6 +180,7 @@ body{
 .welcome-page .name{
   color: var(--bright-color);
 }
+
 .welcome-page .download-cv{
   text-decoration: none;
   color: var(--primary-color);

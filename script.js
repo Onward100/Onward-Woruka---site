@@ -10,6 +10,11 @@ hamburgerMenu.addEventListener("click", () =>{
 closeMenu.addEventListener("click", () =>{
   navMenu.style.transform = "translateX(-2000px)";
 })
+document.body.addEventListener('touchstart',(e) => {
+    if (!navMenu.contains(e.target)) {
+      navMenu.style.transform = "translateX(-2000px)";
+    }
+    });
 
 
 //Services Hover
