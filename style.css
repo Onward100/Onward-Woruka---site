@@ -177,7 +177,7 @@ body{
   margin-bottom: 20px;
   color: var(--primary-color);
 }
-.welcome-page span{
+.welcome-page .name{
   color: var(--bright-color);
 }
 .welcome-page .download-cv{

@@ -77,7 +77,7 @@
 
       <div class="welcome-page" data-aos="fade-right" data-aos-duration="2000">
         <p>Welcome</p>
-        <h2>Hi, I'm <span>Woruka Onward a</span> Frontend Developer</h2>
+        <h2>Hi, I'm <span class="name">Woruka Onward a</span> <span class="frontend"></span></h2>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat animi obcaecati magnam voluptate perferendis
           cupiditate ab et perspiciatis rem consequuntur nesciunt voluptatem, blanditiis doloremque, tenetur quia iste
           aspernatur voluptas! Necessitatibus!</p>
@@ -248,6 +248,15 @@
     AOS.init();
   </script>
   <script src="https://kit.fontawesome.com/b2437ff86c.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    var typed =  new Typed('.frontend', {
+      strings: ['Frontend Developer', 'Web Developer', 'Website Manager'],
+      typeSpeed: 150,
+      backspeed: 200,
+      loop: true
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 
