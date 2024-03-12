@@ -36,9 +36,6 @@ body{
   color: var(--primary-color);
   cursor: pointer;
 }
-.header .active{
-  font-weight: bold;
-}
 .header-logo{
   display: flex;
   gap: 10px;
@@ -82,9 +79,8 @@ body{
 }
 /* Mobile view nav menu */
 .nav-menu-overlay{
-  background-color: var(--primary-color);
   position: fixed;
-  width: 80%;
+  width: 78%;
   height: 100vh;
   opacity: .98;
   z-index: 999000;

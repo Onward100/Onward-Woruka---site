@@ -15,7 +15,12 @@ document.body.addEventListener('touchstart',(e) => {
       navMenu.style.transform = "translateX(-2000px)";
     }
     });
-
+  const mobileNav = document.querySelectorAll(".mobile-link");
+    mobileNav.forEach((item) =>{
+      item.addEventListener('click', (e) =>{
+        navMenu.style.transform = "translateX(-2000px)";
+      });
+  });
 
 //Services Hover
 const cardHover = document.querySelectorAll(".content-card");
