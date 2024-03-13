@@ -104,3 +104,14 @@ sendMail.addEventListener("click", (e) =>{
  e.preventDefault();
 });
 
+//show to-top action btn
+const toTop = document.querySelector(".action-btn");
+window.addEventListener('scroll', () =>{
+  if(window.pageYOffset > 100){
+    toTop.style.opacity = "1";
+  }
+  else{
+    toTop.style.opacity = "0";
+  }
+})
+
