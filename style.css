@@ -552,9 +552,6 @@ margin-top: 30px;
     .welcome-page .download-cv{
       width: 50%;
     }
-    .find-me{
-      display: none;
-    }
     .services-content{
       display: flex;
       gap: 20px;
@@ -576,12 +573,17 @@ margin-top: 30px;
     }
     .contact-content1{
       display: flex;
-      gap: 30px;
+      gap: 20px;
       width: 90%;
+    }
+    .find-me{
+      position: relative;
+      top: 155px;
+      width: 33.3%;
     }
     .contact-content1 img{
       height: 250px !important;
-      width: 55% !important;
+      width: 33.3% !important;
     }
     .contact-content2{
       width: 80% !important;
