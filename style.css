@@ -120,6 +120,7 @@ body{
   text-decoration: none;
   color: var(--black-color);
   transition: .4s ease;
+  font-weight: 500;
 }
 .nav-menu .nav-links a:hover{
   color: var(--bright-color);
@@ -204,15 +205,13 @@ gap: 10px;
 flex-wrap: wrap;
 margin-top: 30px;
 }
-.skill-icons i:hover{
-  transform: scale(1.04);
-  background-color: var(--primary-color);
-  color: var(--text-color);
+.skill-icons h4{
+  display: flex;
+  gap: 5px;
 }
 .skill i{
-  padding: 8px;
+  padding: 5px;
   color: var(--primary-color);
-  transition: .3s ease;
   border-radius: 3px;
   box-shadow: 1px 2px 2px 2px var(--box-shadow);
 }
@@ -277,6 +276,7 @@ margin-top: 30px;
   object-fit: cover;
   border-radius: 5px;
   margin-bottom: 20px;
+  box-shadow: 1px 2px 2px 2px var(--box-shadow);
 }
 .card-overlay{
   position: absolute;
@@ -316,6 +316,45 @@ margin-top: 30px;
   transform: scale(1.04);
   color: var(--text-color);
   background-color: var(--primary-color);
+}
+
+.faq{
+  margin-top: 50px;
+  width: 100%;
+  transition: .3s ease;
+}
+.faq .faq-header{
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+}
+.faq .faq-header h2{
+  color: var(--bright-color);
+  margin-bottom: 20px;
+}
+.faq-content{
+  width: 90%;
+  margin: auto;
+  margin-bottom: 30px;
+  transition: .2s ease;
+}
+.faq-ques-ans{
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.faq-head-content{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.faq-content p{
+  display: none;
+}
+.faq-head-content i{
+  color: var(--bright-color);
+}
+.faq-head-content .fa-arrow-down{
+  display: none;
 }
 
 .contact{
@@ -380,12 +419,18 @@ margin-top: 30px;
     width: 70%;
     margin: 50px auto;
     border-radius: 8px;
-    padding: 20px;
+    padding: 20px 10px 20px 20px;
     box-shadow: 1px 2px 2px 2px var(--box-shadow);
     background-color: rgba(128, 128, 128, 0.2);
   }
-  .contact-content2 label{
-    color: var(--primary-color);
+  .contact-content2 #error-success{
+    text-align: center;
+    padding: 10px;
+    color: white;
+    margin: 20px auto;
+    width: 60%;
+    border-radius: 5px;
+    transition: .2s ease;
   }
   
   .contact-content2 input{
@@ -405,7 +450,7 @@ margin-top: 30px;
   .contact-content2 button{
     border: 1px solid white;
     outline: none;
-    width: 97.5%;
+    width: 95%;
     padding: 10px;
     box-shadow: 1px 2px 2px 2px var(--box-shadow);
     border-radius: 5px;
@@ -422,7 +467,9 @@ margin-top: 30px;
     text-align: center;
     color: var(--primary-color);
     padding: 5px;
-
+  }
+  .copyright span{
+    color: var(--bright-color);
   }
   .action-btn{
     padding: 20px;
@@ -448,7 +495,7 @@ margin-top: 30px;
     padding: 6px 12px;
     text-decoration: none;
     color: white;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: bold;
     border-radius: 200px;
     transition: .3s ease;
@@ -461,6 +508,9 @@ margin-top: 30px;
     .desktop-nav-links{
       display: block;
     }
+    .nav-menu-overlay{
+      display: none;
+    }
     .desktop-nav-links ul{
       display: flex;
       gap: 20px;
@@ -469,13 +519,14 @@ margin-top: 30px;
       list-style-type: none;
       text-transform: uppercase;
     }
-    .desktop-nav-links a:hover{
-      color: var(--bright-color);
-    }
     .desktop-nav-links a{
       text-decoration: none;
       color: var(--primary-color);
       transition: .3s ease;
+      font-weight: 500;
+    }
+    .desktop-nav-links a:hover{
+      color: var(--bright-color);
     }
     .header-hamburger .fa-bars{
       display: none;
@@ -527,6 +578,7 @@ margin-top: 30px;
     }
     .contact-content1 img{
       height: 250px !important;
+      width: 55% !important;
     }
     .contact-content2{
       width: 80% !important;
