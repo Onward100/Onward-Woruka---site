@@ -44,31 +44,29 @@ cardHover.forEach((items) => {
   });
 });
 
-//FAQ 
-const faq = document.querySelectorAll(".faq-ques-ans");        
+//FAQ Dropdown
+const faq = document.querySelectorAll(".faq-ques-ans");   
+let openAnswer = null;     
 
-//click and show answers
+//click and show and hide answers
 faq.forEach((addItem) =>{
-  addItem.addEventListener("click", (e) =>{
-    addItem.children[1].style.display = "block";
-    addItem.children[0].children[1].style.display = "none";
-    addItem.children[0].children[2].style.display = "block";
-   
-    // addItem.previousElementSibling.style.display = "none";
+  const question = addItem.querySelector('.faq-head-content');
+    const answer = addItem.querySelector('.faq-answer');
+    const rightIcon = addItem.querySelector('.fa-arrow-right');
+    const downIcon = addItem.querySelector('.fa-arrow-down');
+
+  question.addEventListener("click", (e) =>{
+    if(answer.style.display === "block" &&    rightIcon.style.display === "none" &&   downIcon.style.display === "block"){
+      answer.style.display = "none";
+      rightIcon.style.display = "block";
+      downIcon.style.display = "none";
+    }else{
+      answer.style.display = "block";
+      rightIcon.style.display = "none";
+      downIcon.style.display = "block";
+    }
   });
 });
-
-
-//click and hide answers
-// faq.forEach((removeItem) =>{
-//   removeItem.addEventListener("click", () =>{
-//     removeItem.children[1].style.display = "none";
-//     removeItem.children[0].children[1].style.display = "block";
-//     removeItem.children[0].children[2].style.display = "none";
-   
-//     // addItem.previousElementSibling.style.display = "none";
-//   });
-//   });
 
 //Email validation
 const fullName = document.getElementById("fullname");
@@ -79,7 +77,7 @@ const sendMail = document.getElementById("send-mail");
 const errSuccess = document.getElementById("error-success");
 
 sendMail.addEventListener("click", (e) =>{
-  if(fullName.value === "" & email.value === "" & message.value === "" & number.value === ""){
+  if(fullName.value === "" && email.value === "" && message.value === "" && number.value === ""){
     errSuccess.style.display = "block";
     errSuccess.innerHTML = "Input fields can't be empty!";
     errSuccess.style.color = "red";
@@ -102,7 +100,7 @@ sendMail.addEventListener("click", (e) =>{
     message.value = '';
     email.value = '';
   }
-//   console.log("click");
+
  e.preventDefault();
 });
 

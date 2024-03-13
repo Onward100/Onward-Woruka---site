@@ -323,6 +323,12 @@ margin-top: 30px;
   width: 100%;
   transition: .3s ease;
 }
+.show{
+  display: block;
+}
+.hide{
+  display: none;
+}
 .faq .faq-header{
   text-align: center;
   color: var(--primary-color);
