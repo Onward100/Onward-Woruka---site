@@ -76,7 +76,7 @@ const number = document.getElementById("number");
 const sendMail = document.getElementById("send-mail");
 const errSuccess = document.getElementById("error-success");
 
-sendMail.addEventListener("click", () =>{
+sendMail.addEventListener("click", (e) =>{
   if(fullName.value === ""){
     errSuccess.style.display = "block";
     errSuccess.innerHTML = "Input fields can't be empty!";
@@ -84,7 +84,6 @@ sendMail.addEventListener("click", () =>{
     setTimeout(()=>{
       errSuccess.style.display = "none";
     }, 3000);
-    return false
   }else if(fullName.value === ""){
     errSuccess.style.display = "block";
     errSuccess.innerHTML = "Name input cannot be empty!";
@@ -92,7 +91,6 @@ sendMail.addEventListener("click", () =>{
     setTimeout(()=>{
       errSuccess.style.display = "none";
     }, 3000);
-    return false
   }else if(email.value === ""){
     errSuccess.style.display = "block";
     errSuccess.innerHTML = "Email cannot be empty!";
@@ -100,7 +98,6 @@ sendMail.addEventListener("click", () =>{
     setTimeout(()=>{
       errSuccess.style.display = "none";
     }, 3000);
-    return false
   }else if(email.value.includes("@") === false){
     errSuccess.style.display = "block";
     errSuccess.innerHTML = "Email format needs an @";
@@ -108,7 +105,6 @@ sendMail.addEventListener("click", () =>{
     setTimeout(()=>{
       errSuccess.style.display = "none";
     }, 3000);
-    return false
   }else if(number.value === ""){
     errSuccess.style.display = "block";
     errSuccess.innerHTML = "Number cannot be empty!";
@@ -116,27 +112,25 @@ sendMail.addEventListener("click", () =>{
     setTimeout(()=>{
       errSuccess.style.display = "none";
     }, 3000);
-    return false
   }
-  else if(number.value.length != 11){
+  // else if(number.value.length != 11){
+  //   errSuccess.style.display = "block";
+  //   errSuccess.innerHTML = "Number must be 11 digits";
+  //   errSuccess.style.color = "red";
+  //   setTimeout(()=>{
+  //     errSuccess.style.display = "none";
+  //   }, 3000);}
+  else if(message.value === ""){
     errSuccess.style.display = "block";
-    errSuccess.innerHTML = "Number must be 11 digits";
+    errSuccess.innerHTML = "Message input cannot be empty!";
     errSuccess.style.color = "red";
+    errSuccess.style.border = "1px solid red";
+    errSuccess.style.backgroundColor = "white";
     setTimeout(()=>{
       errSuccess.style.display = "none";
     }, 3000);
     return false
-  }//else if(message.value === ""){
-  //   errSuccess.style.display = "block";
-  //   errSuccess.innerHTML = "Message input cannot be empty!";
-  //   errSuccess.style.color = "red";
-  //   errSuccess.style.border = "1px solid red";
-  //   errSuccess.style.backgroundColor = "white";
-  //   setTimeout(()=>{
-  //     errSuccess.style.display = "none";
-  //   }, 3000);
-  //   return false
-  // }
+  }
   else {
     errSuccess.style.display = "block";
     errSuccess.innerHTML = "Message sent!"
@@ -144,7 +138,6 @@ sendMail.addEventListener("click", () =>{
     setTimeout(()=>{
       errSuccess.style.display = "none";
     }, 3000);
-    return true
   }
 });
 
@@ -157,5 +150,6 @@ window.addEventListener('scroll', () =>{
   else{
     toTop.style.opacity = "0";
   }
-})
+  e.preventDefault();
+});
 
