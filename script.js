@@ -139,6 +139,7 @@ sendMail.addEventListener("click", (e) =>{
       errSuccess.style.display = "none";
     }, 3000);
   }
+  e.preventDefault();
 });
 
 //show to-top action btn
