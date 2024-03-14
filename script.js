@@ -76,32 +76,76 @@ const number = document.getElementById("number");
 const sendMail = document.getElementById("send-mail");
 const errSuccess = document.getElementById("error-success");
 
-sendMail.addEventListener("click", (e) =>{
-  if(fullName.value === "" && email.value === "" && message.value === "" && number.value === ""){
+sendMail.addEventListener("click", () =>{
+  if(fullName.value === ""){
     errSuccess.style.display = "block";
     errSuccess.innerHTML = "Input fields can't be empty!";
     errSuccess.style.color = "red";
-    errSuccess.style.border = "1px solid red";
-    errSuccess.style.backgroundColor = "white";
-    setTimeout((e)=>{
+    setTimeout(()=>{
       errSuccess.style.display = "none";
     }, 3000);
-  }else{
+    return false
+  }else if(fullName.value === ""){
     errSuccess.style.display = "block";
-    errSuccess.innerHTML = "Message sent!";
-    errSuccess.style.color = "green";
-    errSuccess.style.border = "1px solid green";
-    errSuccess.style.backgroundColor = "white";
-    setTimeout((e)=>{
+    errSuccess.innerHTML = "Name input cannot be empty!";
+    errSuccess.style.color = "red";
+    setTimeout(()=>{
       errSuccess.style.display = "none";
     }, 3000);
-    fullName.value = '';
-    number.value = '';
-    message.value = '';
-    email.value = '';
+    return false
+  }else if(email.value === ""){
+    errSuccess.style.display = "block";
+    errSuccess.innerHTML = "Email cannot be empty!";
+    errSuccess.style.color = "red";
+    setTimeout(()=>{
+      errSuccess.style.display = "none";
+    }, 3000);
+    return false
+  }else if(email.value.includes("@") === false){
+    errSuccess.style.display = "block";
+    errSuccess.innerHTML = "Email format needs an @";
+    errSuccess.style.color = "red";
+    setTimeout(()=>{
+      errSuccess.style.display = "none";
+    }, 3000);
+    return false
+  }else if(number.value === ""){
+    errSuccess.style.display = "block";
+    errSuccess.innerHTML = "Number cannot be empty!";
+    errSuccess.style.color = "red";
+    setTimeout(()=>{
+      errSuccess.style.display = "none";
+    }, 3000);
+    return false
   }
-
- e.preventDefault();
+  else if(number.value.length != 11){
+    errSuccess.style.display = "block";
+    errSuccess.innerHTML = "Number must be 11 digits";
+    errSuccess.style.color = "red";
+    setTimeout(()=>{
+      errSuccess.style.display = "none";
+    }, 3000);
+    return false
+  }//else if(message.value === ""){
+  //   errSuccess.style.display = "block";
+  //   errSuccess.innerHTML = "Message input cannot be empty!";
+  //   errSuccess.style.color = "red";
+  //   errSuccess.style.border = "1px solid red";
+  //   errSuccess.style.backgroundColor = "white";
+  //   setTimeout(()=>{
+  //     errSuccess.style.display = "none";
+  //   }, 3000);
+  //   return false
+  // }
+  else {
+    errSuccess.style.display = "block";
+    errSuccess.innerHTML = "Message sent!"
+    errSuccess.style.color = "green";
+    setTimeout(()=>{
+      errSuccess.style.display = "none";
+    }, 3000);
+    return true
+  }
 });
 
 //show to-top action btn
